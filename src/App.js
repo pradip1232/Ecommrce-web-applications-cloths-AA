@@ -11,6 +11,8 @@ import About from './pages/About';
 import NewArrivals from './pages/NewArrivals';
 import BestSeller from './pages/BestSeller';
 import Footer from './components/Footer';
+import ProductDetails from './pages/ProductDetails';
+import Checkout from './pages/Checkout';
 
 const App = () => {
   return (
@@ -23,6 +25,8 @@ const App = () => {
         <Route path="/about" element={<About />} />
         <Route path="/new-arrivals" element={<NewArrivals />} />
         <Route path="/best-seller" element={<BestSeller />} />
+        <Route path="/product-details" element={<ProductDetails />} />
+        <Route path="/checkout" element={<Checkout />} />
       </Routes>
       <Footer />
     </Router>
