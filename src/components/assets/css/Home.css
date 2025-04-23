@@ -1,0 +1,159 @@
+.first-home-sections .style-showcase {
+  background-color: #f8f9fa; /* subtle background */
+  padding: 0;
+}
+
+.first-home-sections .model-img {
+  /* max-height: 500px; */
+  padding: 0;
+  object-fit: cover;
+  border-radius: 0px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+.first-home-sections .style-title {
+  letter-spacing: 1px;
+  font-size: 1.2rem;
+}
+.first-home-sections .discover-text {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.overseebanner-home .banner-row {
+  height: 100vh;
+  min-height: 500px;
+  position: relative;
+}
+.overseebanner-home .full-height-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.overseebanner-home .centered-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  color: black;
+  /* background-color: rgba(255, 255, 255, 0.7); */
+  padding: 1.5rem 2rem;
+  border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+  .overseebanner-home .banner-row {
+    flex-direction: column;
+  }
+  .overseebanner-home .centered-content {
+    width: 90%;
+    padding: 1rem;
+  }
+}
+
+.product-home-card2 .product-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.product-home-card2 .product-card .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(51, 51, 51, 0.6);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  font-size: 1.2rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.product-home-card2 .product-card:hover .overlay {
+  opacity: 1;
+}
+
+.product-home-card2 .product-card img {
+  height: 100%;
+  object-fit: cover;
+}
+
+
+
+
+
+
+
+
+
+
+.slider-wrapper {
+  position: relative;
+  overflow: hidden;
+  padding: 20px 0;
+}
+
+.slider-container {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+}
+
+.slider-container::-webkit-scrollbar {
+  display: none; /* Safari + Chrome */
+}
+
+.slider-card {
+  flex: 0 0 calc(20% - 13px); /* 5 cards in one row */
+  min-width: calc(20% - 13px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.slider-card:hover {
+  transform: translateY(-5px);
+}
+
+.slider-arrow {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  background-color: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+}
+
+@media (max-width: 991px) {
+  .slider-card {
+      flex: 0 0 calc(33.333% - 10px);
+      min-width: calc(33.333% - 10px);
+  }
+}
+
+@media (max-width: 767px) {
+  .slider-card {
+      flex: 0 0 calc(50% - 8px);
+      min-width: calc(50% - 8px);
+  }
+}
+
+@media (max-width: 576px) {
+  .slider-card {
+      flex: 0 0 100%;
+      min-width: 100%;
+  }
+
+  .slider-arrow {
+      display: none;
+  }
+}

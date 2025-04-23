@@ -3,10 +3,10 @@ import { Navbar, Nav, Container } from 'react-bootstrap';
 import { motion } from 'framer-motion';
 import { FaSearch, FaHeart, FaShoppingCart, FaUser } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-import logo  from './assets/img/Ayva_Logo_CDR[1] black 1.png';
+import logo from './assets/img/Ayva_Logo_CDR[1] black 1.png';
 import '../components/assets/css/Header.css';
 
-const Header = () => {
+const Header = ({cartCount}) => {
     return (
         <>
             {/* Top Info Bar */}
@@ -57,8 +57,14 @@ const Header = () => {
                         <div className="d-flex gap-3 align-items-center ms-auto mt-3 mt-lg-0">
                             <FaSearch className="icon-hover" />
                             <FaHeart className="icon-hover" />
-                            <FaShoppingCart className="icon-hover" />
-                            <FaUser className="icon-hover" />
+                            <Link to="/cart" className="position-relative">
+                                <FaShoppingCart size={22} />
+                                {cartCount > 0 && (
+                                    <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                        {cartCount}
+                                    </span>
+                                )}
+                            </Link>                            <FaUser className="icon-hover" />
                         </div>
                     </Navbar.Collapse>
                 </Container>

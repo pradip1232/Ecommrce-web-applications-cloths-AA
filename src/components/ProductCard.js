@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import { Link } from 'react-router-dom';
 
-const ProductCard = ({ image, title, description, price }) => {
+const ProductCard = ({ image, title, description, price, productID, addToCart }) => {
   const carouselId = `carousel-${title.replace(/\s+/g, '-')}`;
   const images = image;
 
@@ -47,7 +47,14 @@ const ProductCard = ({ image, title, description, price }) => {
           <p className="card-text small text-muted mb-2">{description}</p>
           <div>
             <p className="fw-bold mb-2">₹{price}</p>
-            <button className="btn btn-dark btn-sm w-100">Add to Cart</button>
+            <button
+              className="btn btn-dark btn-sm w-100"
+              onClick={() =>
+                addToCart({ productID, title, price, image: image[0] })
+              }
+            >
+              Add to Cart
+            </button>
           </div>
         </div>
       </div>

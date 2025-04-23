@@ -40,7 +40,7 @@ const ProductDetails = () => {
     };
 
     return (
-        <div className="container py-4">
+        <div className="container py-4 product-details-page">
             <div className="row g-4 align-items-start">
                 <div className="col-md-6 text-center">
                     <img src={product.image} alt="Product" className="img-fluid w-100" />

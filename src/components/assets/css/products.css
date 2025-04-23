@@ -24,3 +24,13 @@
 .product-page-container .card .card-body .card-title {
   cursor: pointer;
 }
+
+/* product details  */
+.product-details-page h5 {
+  font-family: Playfair Display;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-transform: uppercase;
+}
