@@ -7,6 +7,11 @@ import img from '../components/assets/img/41ac248038457c4822f058ef68867ea5 1.png
 import ExploreCard from '../components/HomeComponents/ExploreCard';
 import NewArrivalsSlider from '../components/HomeComponents/NewArrivalsSlider';
 
+
+
+import gg from '../components/assets/new-img/AYVA IMAGES (30).webp';
+import SlingBagsSection from '../components/HomeComponents/SlingBagsSection';
+import ImageGridSection from '../components/HomeComponents/ImageGridSection';
 const Home = () => (
   < >
     <FirstStyleSectionHome />
@@ -47,6 +52,31 @@ const Home = () => (
       </Container>
 
     </section>
+
+
+
+    <section className="girls-banner-section">
+      <div className="container-fluid p-0">
+        <div className="banner-wrapper position-relative">
+          <div className="banner-content position-absolute">
+            <h2 className="fw-bold">YOUR PERFECT PLUS-<br />ONE FOR EVERY OUTFIT</h2>
+            <p className="text-muted mt-3 mb-4">COMPACT, CHIC, AND EFFORTLESSLY YOU</p>
+            <a href="#" className="btn btn-dark">Shop the Collection</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+
+    <SlingBagsSection />
+
+    <ImageGridSection />
+
+
+    
+
   </>
 );
 

@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import logo from './assets/img/Ayva_Logo_CDR[1] black 1.png';
 import '../components/assets/css/Header.css';
 
-const Header = ({cartCount}) => {
+const Header = ({ cartCount }) => {
     return (
         <>
             {/* Top Info Bar */}
@@ -29,8 +29,8 @@ const Header = ({cartCount}) => {
             <Navbar expand="lg" className="py-3 border-bottom bg-white shadow-sm" collapseOnSelect>
                 <Container fluid>
                     {/* Logo Centered */}
-                    <Navbar.Brand className="mx-auto">
-                        <img src={logo} alt="Logo" style={{ height: '60px' }} />
+                    <Navbar.Brand className="mx-auto" style={{ height: '60px' }}>
+                        {/* <img src={logo} alt="Logo" style={{ height: '60px' }} /> */}
                     </Navbar.Brand>
                 </Container>
             </Navbar>

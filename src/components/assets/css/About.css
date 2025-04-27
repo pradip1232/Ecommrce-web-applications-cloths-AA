@@ -1,0 +1,81 @@
+.philosophy-images {
+  width: 100%;
+}
+
+.philosophy-img-wrapper {
+  flex: 1 1 25%;
+  height: 300px;
+}
+
+@media (max-width: 768px) {
+  .philosophy-img-wrapper {
+    flex: 1 1 50%;
+    height: 200px;
+  }
+}
+
+.object-fit-cover {
+  object-fit: cover;
+}
+
+.about-section-laxuary p {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.7;
+}
+
+@media (max-width: 576px) {
+  .about-section-laxuary p {
+    font-size: 0.95rem;
+    text-align: justify;
+  }
+}
+
+.hero-banner-about-page-last-sectiosn {
+  position: relative;
+  height: 80vh;
+  background-image: url("../new-img/AYVA\ IMAGES\ \(12\).webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.hero-banner-about-page-last-sectiosn .hero-banner .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(25, 55, 109, 0.4); /* Blue overlay */
+  z-index: 1;
+}
+.hero-banner-about-page-last-sectiosn .hero-banner .content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+}
+.hero-banner-about-page-last-sectiosn .hero-banner h5 {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+.hero-banner-about-page-last-sectiosn .hero-banner p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+.hero-banner-about-page-last-sectiosn .hero-banner .highlight {
+  font-weight: 600;
+  color: #fff;
+}
+
+/* Mobile responsive */
+@media (max-width: 576px) {
+  .hero-banner-about-page-last-sectiosn .hero-banner {
+    height: 40vh;
+    padding: 1rem;
+  }
+  .hero-banner-about-page-last-sectiosn .hero-banner h5 {
+    font-size: 1.1rem;
+  }
+  .hero-banner-about-page-last-sectiosn .hero-banner p {
+    font-size: 0.95rem;
+  }
+}
