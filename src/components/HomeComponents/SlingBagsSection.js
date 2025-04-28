@@ -39,8 +39,8 @@ const cardVariants = {
 
 const SlingBagsSection = () => {
   return (
-    <div className="container py-5">
-      <h3 className="text-center mb-4">SLING HAND BAGS</h3>
+    <div className="container py-5 slignbagssection">
+      <h3 className="text-center mb-2">SLING HAND BAGS</h3>
       <motion.div
         className="row g-4"
         variants={containerVariants}
@@ -50,7 +50,7 @@ const SlingBagsSection = () => {
       >
         {bags.map((bag) => (
           <motion.div
-            className="col-6 col-md-3"
+            className="col-6 col-md-3 p-1"
             key={bag.id}
             variants={cardVariants}
           >
@@ -59,9 +59,9 @@ const SlingBagsSection = () => {
                 src={bag.image}
                 alt={bag.name}
                 className="card-img-top img-fluid"
-                style={{ borderRadius: '10px' }}
+                style={{ borderRadius: '0px' }}
               />
-              <div className="text-center mt-2">
+              <div className="text-left mt-2">
                 <p className="mb-1">{bag.name}</p>
                 <strong>{bag.price}</strong>
               </div>

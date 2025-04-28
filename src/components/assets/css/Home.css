@@ -8,16 +8,28 @@
   padding: 0;
   object-fit: cover;
   border-radius: 0px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); */
 }
-.first-home-sections .style-title {
-  letter-spacing: 1px;
-  font-size: 1.2rem;
+.first-home-sections .boys-img-home {
+  height: 700px;
+  width: 100%;
 }
-.first-home-sections .discover-text {
-  font-size: 1rem;
-  font-weight: 500;
-  color: #333;
+/* .first-home-sections */
+.style-title {
+  font-family: Poppins;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-transform: uppercase;
+}
+/* .first-home-sections */
+.discover-text {
+  font-family: Poppins;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 117%;
+  letter-spacing: 0%;
 }
 
 .overseebanner-home .banner-row {
@@ -27,7 +39,7 @@
 }
 .overseebanner-home .full-height-img {
   width: 100%;
-  height: 100%;
+  height: 665px;
   object-fit: cover;
 }
 .overseebanner-home .centered-content {
@@ -52,12 +64,23 @@
   }
 }
 
+.product-home-card2 .card {
+  box-shadow: none !important;
+}
 .product-home-card2 .product-card {
   position: relative;
   overflow: hidden;
-  border-radius: 8px;
+  border-radius: 0px;
+  box-shadow: none !important;
 }
-
+.product-home-card2 h5 {
+  font-family: Playfair Display;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-transform: uppercase;
+}
 .product-home-card2 .product-card .overlay {
   position: absolute;
   top: 0;
@@ -92,7 +115,8 @@
 
 .slider-container {
   display: flex;
-  gap: 16px;
+  align-items: center !important;
+  gap: 0px;
   overflow-x: auto;
   scroll-behavior: smooth;
   scrollbar-width: none; /* Firefox */
@@ -102,11 +126,18 @@
 .slider-container::-webkit-scrollbar {
   display: none; /* Safari + Chrome */
 }
-
+.new-arrival-hading {
+  font-family: Playfair Display !important;
+  font-weight: 400 !important;
+  font-size: 22px !important;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-transform: uppercase;
+}
 .slider-card {
   flex: 0 0 calc(20% - 13px); /* 5 cards in one row */
   min-width: calc(20% - 13px);
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); */
   transition: transform 0.3s;
 }
 
@@ -154,15 +185,31 @@
   background-size: cover;
   background-position: center;
   width: 100%;
-  height: 500px;
+  height: 95vh;
   position: relative;
 }
+.girls-banner-section h2 {
+  font-family: Playfair Display;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 110.00000000000001%;
+  letter-spacing: 1%;
+  text-transform: uppercase;
+}
+.girls-banner-section p {
+  font-family: Poppins;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-transform: uppercase;
+}
 .girls-banner-section .banner-content {
-  top: 10%;
+  top: 21%;
   left: 10%;
   position: absolute;
   color: #000;
-  max-width: 400px;
+  max-width: 410px;
 }
 
 @media (max-width: 768px) {
@@ -174,6 +221,15 @@
     left: 5%;
     max-width: 90%;
   }
+}
+
+.slignbagssection h3 {
+  font-family: Playfair Display;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-transform: uppercase;
 }
 
 .image-card {
@@ -198,5 +254,85 @@
 }
 
 .image-card:hover .overlay {
+  opacity: 1;
+}
+
+/* TestimonialSlider.css */
+
+/* Make the text and image same height */
+.testimonial-slide {
+  height: 100%;
+  background: #fff;
+  border-radius: 0px;
+  overflow: hidden;
+  min-height: 400px; /* adjust if you want taller */
+}
+
+.testimonial-slide h6 {
+  font-family: Poppins;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 137%;
+  letter-spacing: 0%;
+}
+
+.testimonial-slide p {
+  font-family: Poppins;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 137%;
+  letter-spacing: 0%;
+}
+
+.testimonial-slide h5 {
+  font-family: Poppins;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0%;
+}
+
+.testimonial-slide small {
+  font-family: Poppins;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 100%;
+  letter-spacing: 0%;
+}
+/* Text Section */
+.testimonial-card {
+  background-color: #1c1c1c;
+  color: white;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Image Section */
+.testimonial-img {
+  flex: 1;
+  position: relative;
+  min-height: 400px; /* match text card */
+}
+
+.testimonial-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Swiper Dots */
+.swiper-pagination-bullets {
+  bottom: 10px;
+}
+
+.swiper-pagination-bullet {
+  background: #000;
+  opacity: 0.5;
+}
+
+.swiper-pagination-bullet-active {
+  background: #555;
   opacity: 1;
 }

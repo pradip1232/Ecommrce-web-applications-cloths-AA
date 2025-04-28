@@ -13,12 +13,6 @@ import s2 from '../components/assets/new-img/AYVA IMAGES (5).webp';
 
 
 
-
-
-
-
-
-
 import i1 from '../components/assets/new-img/AYVA IMAGES (15).webp';
 import i2 from '../components/assets/new-img/AYVA IMAGES (2).webp';
 import i3 from '../components/assets/new-img/AYVA IMAGES (13).webp';
@@ -33,7 +27,7 @@ const images = [i1, i2, i3, i4];
 const About = () => {
   return (
     <>
-      <section>
+      <section className='about-sectiosn-first-sectiosn'>
         <Container>
           <Row className='justify-content-center'>
             <Col md={5}>
@@ -67,7 +61,7 @@ const About = () => {
             </div>
 
             {/* Right Column - Images */}
-            <div className="col-12 col-md-6 position-relative">
+            <div className="col-12 col-md-6 position-relative d-flex justify-content-end  ">
               <img src={img3} alt="Main" className="img-fluid w-75 h-75 rounded shadow" />
 
               {/* Small Image 1 */}
@@ -79,7 +73,7 @@ const About = () => {
                   width: '100px',
                   height: '120px',
                   top: '10%',
-                  left: '-6%',
+                  left: '14%',
                   objectFit: 'cover',
                   border: '2px solid white',
                   backgroundColor: 'white',
@@ -95,7 +89,7 @@ const About = () => {
                   width: '100px',
                   height: '120px',
                   top: '55%',
-                  left: '-8%',
+                  left: '18%',
                   objectFit: 'cover',
                   border: '2px solid white',
                   backgroundColor: 'white',
@@ -112,24 +106,32 @@ const About = () => {
       <section>
         <div className="container-fluid px-0 my-5">
           {/* Text Section */}
-          <div className="text-center mb-4 px-3">
-            <h5 className="fw-semibold">THE PHILOSOPHY BEHIND AYVVA</h5>
-            <p className="mt-3">
-              Bridging the gap between everyday comfort and top-notch quality, AYVVA delivers
-              unparalleled designs — combining ready-to-wear clothing and statement accessories
-              that enhance every look.
-            </p>
-            <p>
-              Every product is a reflection of fine craftsmanship, elevated design, and timeless
-              luxury, offering a sense of exclusivity and self-expression.
-            </p>
-            <p className="fw-bold mt-4">
-              Our mission? <br />
-              <span className="fw-normal">
-                To help you feel your best, boldest self in your fast-paced life — with outfits
-                and accessories that don’t just follow trends, but transcend them.
-              </span>
-            </p>
+          <div className='container'>
+            <div className='row'>
+              <div className='col-12 col-md-12'>
+
+                <div className="text-center mb-4 px-3">
+                  <h5 className="fw-semibold">THE PHILOSOPHY BEHIND AYVVA</h5>
+                  <p className="mt-3">
+                    Bridging the gap between everyday comfort and top-notch quality, AYVVA delivers
+                    unparalleled designs — combining ready-to-wear clothing and statement accessories
+                    that enhance every look.
+                  </p>
+                  <p>
+                    Every product is a reflection of fine craftsmanship, elevated design, and timeless
+                    luxury, offering a sense of exclusivity and self-expression.
+                  </p>
+                  <p className="fw-bold mt-4">
+                    Our mission? <br />
+                    <span className="fw-normal">
+                      To help you feel your best, boldest self in your fast-paced life — with outfits
+                      and accessories that don’t just follow trends, but transcend them.
+                    </span>
+                  </p>
+                </div>
+
+              </div>
+            </div>
           </div>
 
           {/* Full-width Image Grid */}

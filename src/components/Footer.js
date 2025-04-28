@@ -1,6 +1,8 @@
 import React from 'react';
 import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa';
 
+import logo from '../components/assets/new-img/AYVA IMAGES (63).webp';
+
 const Footer = () => {
     return (
         <footer className="bg-light text-dark pt-5 border-top">
@@ -9,7 +11,7 @@ const Footer = () => {
 
                     {/* Logo and About */}
                     <div className="col-lg-3 col-md-6">
-                        <img src="logo.png" alt="Ayva Logo" className="mb-3" style={{ height: '50px' }} />
+                        <img src={logo} alt="Ayva Logo" className="mb-3" style={{ height: '50px' }} />
                         <p className="small">
                             At Ayva we bring you timeless fashion with a commitment to quality and sustainability. Explore our premium collections crafted for style and comfort.
                         </p>

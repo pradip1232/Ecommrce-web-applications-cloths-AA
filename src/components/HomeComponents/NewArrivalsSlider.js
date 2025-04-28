@@ -10,12 +10,11 @@ import {
     Box,
 } from '@mui/material';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import { Container, Row } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 
 import i1 from '../assets/new-img/AYVA IMAGES (54).webp';
 import i2 from '../assets/new-img/AYVA IMAGES (52).webp';
 import i3 from '../assets/new-img/AYVA IMAGES (34).webp';
-
 
 const productData = [
     { title: "Men's Oversize T-Shirts", image: i1, showButton: true },
@@ -46,54 +45,96 @@ const NewArrivalsSlider = () => {
     const fullData = [{ title: 'NEW ARRIVALS', isHeading: true }, ...productData];
 
     return (
-        <Container fluid className="newarrivels-card-slider">
-            <Row>
-                <div className="slider-wrapper">
-                    <div className="slider-container" ref={sliderRef}>
-                        {fullData.map((item, index) => (
-                            <Card key={index} className="slider-card">
-                                {item.isHeading ? (
-                                    <CardContent className="text-center">
-                                        <Typography variant="h6">NEW ARRIVALS</Typography>
+        <Box position="relative" py={4}>
+            <Container className="newarrivals-card-slider position-relative">
+                <Box
+                    className="slider-container d-flex overflow-hidden"
+                    ref={sliderRef}
+                    sx={{
+                        gap: '16px',
+                        scrollBehavior: 'smooth',
+                        alignItems: 'stretch',
+                    }}
+                >
+                    {fullData.map((item, index) => (
+                        <Card
+                            key={index}
+                            className="slider-card flex-shrink-0"
+                            sx={{
+                                width: { xs: '160px', sm: 'calc(20% - 16px)' }, // 5 cards exactly
+                                minWidth: { xs: '160px', sm: 'calc(20% - 16px)' },
+                                height: '100%',
+                                display: 'flex',
+                                flexDirection: 'column',
+                                justifyContent: 'center',
+                                alignItems: 'center',
+                                textAlign: 'center',
+                                boxShadow: 'none',
+                                p: 0,
+                            }}
+                        >
+                            {item.isHeading ? (
+                                <CardContent sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', top: '50%', left: '50%' }}>
+                                    <Typography variant="h6" className='new-arrival-hading' >
+                                        {item.title}
+                                    </Typography>
+                                </CardContent>
+                            ) : (
+                                <>
+                                    <CardMedia
+                                        component="img"
+                                        image={item.image}
+                                        alt={item.title}
+                                        sx={{
+                                            height: 250,
+                                            width: '100%',
+                                            objectFit: 'cover',
+                                            borderRadius: 0,
+                                        }}
+                                    />
+                                    <CardContent sx={{ p: 1 }}>
+                                        <Typography variant="body2" className='text-left'>{item.title}</Typography>
+                                        {item.showButton && (
+                                            <Button className='d-none'
+                                                variant="contained"
+                                                size="small"
+                                                fullWidth
+                                                sx={{ mt: 1 }}
+                                            >
+                                                View Product
+                                            </Button>
+                                        )}
                                     </CardContent>
-                                ) : (
-                                    <>
-                                        <CardMedia
-                                            component="img"
-                                            image={item.image}
-                                            alt={item.title}
-                                            style={{
-                                                height: 180,
-                                                width: '100%',
-                                                objectFit: 'cover',
-                                            }}
-                                        />
-                                        <CardContent className="text-center">
-                                            <Typography variant="body2">{item.title}</Typography>
-                                            {item.showButton && (
-                                                <Button
-                                                    variant="contained"
-                                                    fullWidth
-                                                    style={{ marginTop: '10px' }}
-                                                >
-                                                    View Product
-                                                </Button>
-                                            )}
-                                        </CardContent>
-                                    </>
-                                )}
-                            </Card>
-                        ))}
-                    </div>
+                                </>
+                            )}
+                        </Card>
+                    ))}
+                </Box>
+            </Container>
 
-                    {!isMobile && (
-                        <IconButton className="slider-arrow" onClick={handleRightClick}>
-                            <ArrowForwardIosIcon />
-                        </IconButton>
-                    )}
-                </div>
-            </Row>
-        </Container>
+            {/* Right Arrow Button aligned to Container's Right */}
+            <Container
+                sx={{ position: 'relative' }}
+            >
+                <IconButton
+                    className="slider-arrow"
+                    onClick={handleRightClick}
+                    sx={{
+                        position: 'absolute',
+                        top: '50%',
+                        right: '4%',
+                        // right: { xs: '10px', md: 'calc((100% - 1140px) / 2 - 25px)' }, 
+                        transform: 'translate(50%, -50%)',
+                        backgroundColor: '#fff',
+                        border: '1px solid #ccc',
+                        zIndex: 10,
+                        boxShadow: 1,
+                    }}
+                >
+                    <ArrowForwardIosIcon fontSize="small" />
+                </IconButton>
+            </Container>
+        </Box>
     );
 };
 

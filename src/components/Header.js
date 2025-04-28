@@ -30,7 +30,7 @@ const Header = ({ cartCount }) => {
                 <Container fluid>
                     {/* Logo Centered */}
                     <Navbar.Brand className="mx-auto" style={{ height: '60px' }}>
-                        {/* <img src={logo} alt="Logo" style={{ height: '60px' }} /> */}
+                        <img src={logo} alt="Logo" style={{ height: '60px' }} />
                     </Navbar.Brand>
                 </Container>
             </Navbar>

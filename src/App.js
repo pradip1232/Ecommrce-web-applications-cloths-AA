@@ -15,6 +15,7 @@ import ProductDetails from './pages/ProductDetails';
 import Checkout from './pages/Checkout';
 import ShoppingCart from './pages/ShoppingCart';
 import ContactUs from './pages/ContactUs';
+import NotFound from './pages/NotFound';
 
 const App = () => {
   const [cart, setCart] = useState([]);
@@ -36,6 +37,8 @@ const App = () => {
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/cart" element={<ShoppingCart />} />
+        <Route path="*" element={<NotFound />} />
+
       </Routes>
       <Footer />
     </Router>
