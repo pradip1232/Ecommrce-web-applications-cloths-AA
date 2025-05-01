@@ -9,12 +9,12 @@
 
 .about-sectiosn-first-sectiosn h5 {
   font-family: Playfair Display;
-font-weight: 400;
-font-size: 24px;
-line-height: 110.00000000000001%;
-letter-spacing: 1%;
-text-transform: uppercase;
-padding: 20px 0;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 110.00000000000001%;
+  letter-spacing: 1%;
+  text-transform: uppercase;
+  padding: 20px 0;
 }
 
 @media (max-width: 768px) {
@@ -41,6 +41,71 @@ padding: 20px 0;
   }
 }
 
+.out-story-about-page-sectiosn h5 {
+  font-family: Playfair Display;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-transform: uppercase;
+}
+.out-story-about-page-sectiosn p {
+  font-family: Poppins;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 156%;
+  letter-spacing: 0%;
+  text-align: justify;
+}
+.philosophy-about-page-sectiosn h5 {
+  font-family: Playfair Display;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  text-transform: uppercase;
+}
+.philosophy-about-page-sectiosn p {
+  font-family: Poppins;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 156%;
+  letter-spacing: 0%;
+  text-align: center;
+}
+.philosophy-about-page-sectiosn .our-mission {
+  font-family: Poppins;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 156%;
+  letter-spacing: 0%;
+  text-align: center;
+}
+.philosophy-about-page-sectiosn .philosophy-images img {
+  height: 500px;
+}
+.about-section-laxuary {
+  margin-top: 12rem;
+}
+.about-section-laxuary h5 {
+  font-family: Playfair Display;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-transform: uppercase;
+}
+
+.about-section-laxuary p {
+  font-family: Poppins;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 156%;
+  letter-spacing: 0%;
+  text-align: center;
+}
+
 .hero-banner-about-page-last-sectiosn {
   position: relative;
   height: 80vh;
@@ -58,22 +123,47 @@ padding: 20px 0;
   background: rgba(25, 55, 109, 0.4); /* Blue overlay */
   z-index: 1;
 }
-.hero-banner-about-page-last-sectiosn .hero-banner .content {
+.hero-banner-about-page-last-sectiosn .content {
+  position: absolute;
+  top: 18%;
+  left: 0;
+  /* width: 100%; */
+  /* height: 100%; */
   position: relative;
   z-index: 2;
-  max-width: 700px;
+  /* max-width: 700px; */
 }
-.hero-banner-about-page-last-sectiosn .hero-banner h5 {
-  font-size: 1.4rem;
-  font-weight: 600;
+.hero-banner-about-page-last-sectiosn h5 span {
+  font-family: Playfair Display;
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 110.00000000000001%;
+  letter-spacing: 1%;
+  text-transform: uppercase;
 }
-.hero-banner-about-page-last-sectiosn .hero-banner p {
-  font-size: 1rem;
-  line-height: 1.6;
+.hero-banner-about-page-last-sectiosn h5 {
+  font-family: Playfair Display;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 110.00000000000001%;
+  letter-spacing: 1%;
+  text-transform: uppercase;
 }
-.hero-banner-about-page-last-sectiosn .hero-banner .highlight {
-  font-weight: 600;
-  color: #fff;
+.hero-banner-about-page-last-sectiosn p {
+  font-family: Poppins;
+  font-weight: 300;
+  font-size: 32px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+}
+.hero-banner-about-page-last-sectiosn .highlight {
+  font-family: Poppins;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
 }
 
 /* Mobile responsive */

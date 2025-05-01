@@ -2,14 +2,15 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import { Link } from 'react-router-dom';
+import { FaShoppingCart } from 'react-icons/fa';
 
 const ProductCard = ({ image, title, description, price, productID, addToCart }) => {
   const carouselId = `carousel-${title.replace(/\s+/g, '-')}`;
   const images = image;
 
   return (
-    <div className="col-lg-3 col-md-4 col-sm-6 mb-4 product-page-container">
-      <div className="card shadow-sm border-0">
+    <div className="col-lg-3 col-md-4 col-sm-6 product-page-container">
+      <div className="card  border-0">
         {/* Carousel with autoplay (uncomment interval for auto-slide) */}
         <div
           id={carouselId}
@@ -39,7 +40,7 @@ const ProductCard = ({ image, title, description, price, productID, addToCart })
           )}
         </div>
 
-        <div className="card-body">
+        <div className="card-body text-center">
           {/* <Link to={`/product/${id}`} className="text-decoration-none text-dark"> */}
           <Link to={`/product-details`} className="text-decoration-none text-dark">
             <h6 className="card-title mb-1">{title}</h6>
@@ -47,14 +48,20 @@ const ProductCard = ({ image, title, description, price, productID, addToCart })
           <p className="card-text small text-muted mb-2">{description}</p>
           <div>
             <p className="fw-bold mb-2">₹{price}</p>
-            <button
+
+            <Link onClick={() =>
+              addToCart({ productID, title, price, image: image[0] })
+            }>
+              <FaShoppingCart size={22} />
+            </Link>
+            {/* <button
               className="btn btn-dark btn-sm w-100"
               onClick={() =>
                 addToCart({ productID, title, price, image: image[0] })
               }
             >
               Add to Cart
-            </button>
+            </button> */}
           </div>
         </div>
       </div>

@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
-
+// import './index.css';
 import Home from './pages/Home';
 import Women from './pages/Women';
 import Men from './pages/Men';
@@ -16,6 +16,10 @@ import Checkout from './pages/Checkout';
 import ShoppingCart from './pages/ShoppingCart';
 import ContactUs from './pages/ContactUs';
 import NotFound from './pages/NotFound';
+import SignUpForm from './pages/SignUpForm';
+import LoginForm from './pages/LoginForm';
+import Wishlist from './pages/Wishlist';
+import Cart from './pages/Cart';
 
 const App = () => {
   const [cart, setCart] = useState([]);
@@ -37,6 +41,10 @@ const App = () => {
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/cart" element={<ShoppingCart />} />
+        <Route path="/sign-up" element={<SignUpForm />} />
+        <Route path="/login" element={<LoginForm />} />
+        <Route path="/wishlist" element={<Wishlist />} />
+        <Route path="/my-cart" element={<Cart />} />
         <Route path="*" element={<NotFound />} />
 
       </Routes>

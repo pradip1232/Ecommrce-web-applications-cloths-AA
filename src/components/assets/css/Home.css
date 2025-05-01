@@ -336,3 +336,48 @@
   background: #555;
   opacity: 1;
 }
+
+.wishlist-title {
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.wishlist-img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.wishlist-table {
+  border-spacing: 0 1rem;
+  border-collapse: separate;
+}
+
+.cart-title {
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.cart-img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.quantity-control {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.coupon-input {
+  min-width: 250px;
+}
+
+.cart-summary ul li {
+  margin-bottom: 10px;
+}

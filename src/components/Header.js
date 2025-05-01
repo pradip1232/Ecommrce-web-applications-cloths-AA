@@ -9,7 +9,6 @@ import '../components/assets/css/Header.css';
 const Header = ({ cartCount }) => {
     return (
         <>
-            {/* Top Info Bar */}
             <motion.div
                 className="bg-darkk top-header-bar- text-black text-center small py-1 d-none d-md-block"
                 initial={{ y: -50, opacity: 0 }}
@@ -25,25 +24,19 @@ const Header = ({ cartCount }) => {
                 </div>
             </motion.div>
 
-            {/* Main Header */}
             <Navbar expand="lg" className="py-3 border-bottom bg-white shadow-sm" collapseOnSelect>
                 <Container fluid>
-                    {/* Logo Centered */}
-                    <Navbar.Brand className="mx-auto" style={{ height: '60px' }}>
+                    <Navbar.Brand href='/' className="mx-auto" style={{ height: '60px' }}>
                         <img src={logo} alt="Logo" style={{ height: '60px' }} />
                     </Navbar.Brand>
                 </Container>
             </Navbar>
 
-            {/* Nav and Icons */}
             <Navbar expand="lg" className="border-bottom bg-white shadow-sm" collapseOnSelect>
                 <Container>
-                    {/* Toggle Button for Mobile */}
                     <Navbar.Toggle aria-controls="main-navbar" />
 
-                    {/* Collapsible Nav */}
                     <Navbar.Collapse id="main-navbar">
-                        {/* Nav Links Centered */}
                         <Nav className="mx-auto gap-3 text-center">
                             <Nav.Link as={Link} to="/">Home</Nav.Link>
                             <Nav.Link as={Link} to="/women">Women</Nav.Link>
@@ -53,18 +46,22 @@ const Header = ({ cartCount }) => {
                             <Nav.Link as={Link} to="/best-seller">Best Seller</Nav.Link>
                         </Nav>
 
-                        {/* Icons on Right */}
                         <div className="d-flex gap-3 align-items-center ms-auto mt-3 mt-lg-0">
                             <FaSearch className="icon-hover" />
-                            <FaHeart className="icon-hover" />
-                            <Link to="/cart" className="position-relative">
+                            <Link to="/wishlist">
+                                <FaHeart className="icon-hover" />
+                            </Link>
+                            <Link to="/my-cart" className="position-relative">
                                 <FaShoppingCart size={22} />
                                 {cartCount > 0 && (
                                     <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                                         {cartCount}
                                     </span>
                                 )}
-                            </Link>                            <FaUser className="icon-hover" />
+                            </Link>
+                            <Link to="/sign-up">
+                                <FaUser className="icon-hover" />
+                            </Link>
                         </div>
                     </Navbar.Collapse>
                 </Container>

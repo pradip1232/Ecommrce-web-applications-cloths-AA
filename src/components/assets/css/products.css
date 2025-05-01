@@ -21,6 +21,9 @@
   flex-direction: column;
   /* justify-content: space-between; */
 }
+.product-page-container .card .card-body {
+  
+}
 .product-page-container .card .card-body .card-title {
   cursor: pointer;
 }

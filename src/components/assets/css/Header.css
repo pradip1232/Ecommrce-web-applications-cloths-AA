@@ -1,3 +1,8 @@
+a {
+  color: #000!important;
+  /* background-color: #000; */
+}
+
 .icon-hover {
   cursor: pointer;
   font-size: 18px;
@@ -24,4 +29,13 @@
   font-size: 12px;
   line-height: 100%;
   letter-spacing: 0%;
+}
+
+.navbar-nav .nav-link {
+  font-family: Playfair Display;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 146%;
+  letter-spacing: 0%;
+  color: #000;
 }
