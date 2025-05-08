@@ -141,7 +141,7 @@ const SignUpForm = () => {
           flexDirection: "column",
           gap: 2,
           p: 3,
-          backgroundColor: "#fafafa",
+          backgroundColor: "white",
           borderRadius: 2,
           boxShadow: 3,
         }}
@@ -253,15 +253,16 @@ const SignUpForm = () => {
           helperText={errors.password}
         />
 
-        <Button
-          type="submit"
-          variant="contained"
-          color="primary"
-          fullWidth
-          sx={{ mt: 2 }}
-        >
-          SIGN UP
-        </Button>
+        <Box display="flex" justifyContent="center">
+          <Button
+            type="submit"
+            variant="contained"
+            color="primary"
+            sx={{ mt: 2, background: "black", color: "white", width: "200px" }}
+          >
+            SIGN UP
+          </Button>
+        </Box>
 
         <Typography textAlign="center" sx={{ mt: 2 }}>
           Already have an account? <a href="/login">Log In</a>

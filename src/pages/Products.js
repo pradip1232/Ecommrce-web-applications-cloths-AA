@@ -50,7 +50,10 @@ const Products = () => {
                         />
                     ))
                 ) : (
-                    <div className='text-center'>Loading products...</div> 
+                    <div className='text-center'>Loading products...
+                        <br />
+                        <p>Please Wait...</p>
+                    </div>
                 )}
             </div>
         </div>

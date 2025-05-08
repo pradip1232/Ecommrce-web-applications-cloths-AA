@@ -91,7 +91,16 @@ const LoginForm = () => {
 
         {/* Submit */}
         <Box mt={3} textAlign="center">
-          <Button type="submit" variant="contained" color="primary" fullWidth>
+          <Button
+            type="submit"
+            variant="contained"
+            // color="primary"
+            sx={{
+              width: "200px",
+              background: "black",
+              color: "white",
+            }}
+          >
             LOG IN
           </Button>
           <Typography mt={2}>
