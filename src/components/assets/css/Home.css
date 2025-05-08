@@ -81,6 +81,13 @@
   letter-spacing: 0%;
   text-transform: uppercase;
 }
+.product-home-card2 .product-card small {
+  font-family: Poppins;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: 0%;
+}
 .product-home-card2 .product-card .overlay {
   position: absolute;
   top: 0;

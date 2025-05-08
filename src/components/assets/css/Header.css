@@ -1,5 +1,5 @@
 a {
-  color: #000!important;
+  color: #000 !important;
   /* background-color: #000; */
 }
 
@@ -20,6 +20,16 @@ a {
 
 .navbar-nav .nav-link:hover {
   color: #777;
+}
+
+#main-navbar .navbar-nav {
+  margin-left: 19.5rem;
+}
+
+@media (max-width: 1024px) {
+  #main-navbar .navbar-nav {
+    margin-left: 12rem;
+  }
 }
 
 .top-header-bar- {

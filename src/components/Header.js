@@ -1,7 +1,7 @@
 import React from 'react';
 import { Navbar, Nav, Container } from 'react-bootstrap';
 import { motion } from 'framer-motion';
-import { FaSearch, FaHeart, FaShoppingCart, FaUser } from 'react-icons/fa';
+import { FaSearch, FaRegHeart, FaUser, FaShoppingCart } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import logo from './assets/img/Ayva_Logo_CDR[1] black 1.png';
 import '../components/assets/css/Header.css';
@@ -37,7 +37,7 @@ const Header = ({ cartCount }) => {
                     <Navbar.Toggle aria-controls="main-navbar" />
 
                     <Navbar.Collapse id="main-navbar">
-                        <Nav className="mx-auto gap-3 text-center">
+                        <Nav className=" gap-3 text-center">
                             <Nav.Link as={Link} to="/">Home</Nav.Link>
                             <Nav.Link as={Link} to="/women">Women</Nav.Link>
                             <Nav.Link as={Link} to="/men">Men</Nav.Link>
@@ -49,10 +49,12 @@ const Header = ({ cartCount }) => {
                         <div className="d-flex gap-3 align-items-center ms-auto mt-3 mt-lg-0">
                             <FaSearch className="icon-hover" />
                             <Link to="/wishlist">
-                                <FaHeart className="icon-hover" />
+                                {/* <FaRegHeart className="icon-hover" style={{ fontSize: '20px' }} /> */}
+                                <i class="bi bi-heart" style={{ fontSize: '20px' }} ></i>
                             </Link>
+
                             <Link to="/my-cart" className="position-relative">
-                                <FaShoppingCart size={22} />
+                                <i className="bi bi-cart" style={{ fontSize: '20px' }}></i>
                                 {cartCount > 0 && (
                                     <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                                         {cartCount}
@@ -60,8 +62,9 @@ const Header = ({ cartCount }) => {
                                 )}
                             </Link>
                             <Link to="/sign-up">
-                                <FaUser className="icon-hover" />
+                                <i className="bi bi-person icon-hover" style={{ fontSize: '22px' }}></i>
                             </Link>
+
                         </div>
                     </Navbar.Collapse>
                 </Container>

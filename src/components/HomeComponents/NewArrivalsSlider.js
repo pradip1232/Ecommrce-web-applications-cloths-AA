@@ -61,7 +61,7 @@ const NewArrivalsSlider = () => {
                             key={index}
                             className="slider-card flex-shrink-0"
                             sx={{
-                                width: { xs: '160px', sm: 'calc(20% - 16px)' }, // 5 cards exactly
+                                width: { xs: '160px', sm: 'calc(20% - 16px)' },
                                 minWidth: { xs: '160px', sm: 'calc(20% - 16px)' },
                                 height: '100%',
                                 display: 'flex',
@@ -74,36 +74,72 @@ const NewArrivalsSlider = () => {
                             }}
                         >
                             {item.isHeading ? (
-                                <CardContent sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', top: '50%', left: '50%' }}>
-                                    <Typography variant="h6" className='new-arrival-hading' >
+                                <CardContent
+                                    sx={{
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        height: '100%',
+                                    }}
+                                >
+                                    <Typography variant="h6" className="new-arrival-hading">
                                         {item.title}
                                     </Typography>
                                 </CardContent>
                             ) : (
                                 <>
-                                    <CardMedia
-                                        component="img"
-                                        image={item.image}
-                                        alt={item.title}
+                                    <Box
                                         sx={{
-                                            height: 250,
+                                            position: 'relative',
                                             width: '100%',
-                                            objectFit: 'cover',
-                                            borderRadius: 0,
+                                            height: 250,
+                                            overflow: 'hidden',
+                                            '&:hover .hover-button': {
+                                                ...(item.showButton
+                                                    ? {
+                                                        opacity: 1,
+                                                        transform: 'translateY(0)',
+                                                    }
+                                                    : {}),
+                                            },
                                         }}
-                                    />
-                                    <CardContent sx={{ p: 1 }}>
-                                        <Typography variant="body2" className='text-left'>{item.title}</Typography>
+                                    >
+                                        <CardMedia
+                                            component="img"
+                                            image={item.image}
+                                            alt={item.title}
+                                            sx={{
+                                                height: '100%',
+                                                width: '100%',
+                                                objectFit: 'cover',
+                                                borderRadius: 0,
+                                            }}
+                                        />
                                         {item.showButton && (
-                                            <Button className='d-none'
+                                            <Button
+                                                className="hover-button"
                                                 variant="contained"
                                                 size="small"
                                                 fullWidth
-                                                sx={{ mt: 1 }}
+                                                sx={{
+                                                    position: 'absolute',
+                                                    bottom: 0,
+                                                    left: 0,
+                                                    borderRadius: 0,
+                                                    opacity: 0,
+                                                    transform: 'translateY(20%)',
+                                                    transition: 'all 0.3s ease-in-out',
+                                                }}
                                             >
                                                 View Product
                                             </Button>
                                         )}
+                                    </Box>
+
+                                    <CardContent sx={{ p: 1 }}>
+                                        <Typography variant="body2" className="text-left">
+                                            {item.title}
+                                        </Typography>
                                     </CardContent>
                                 </>
                             )}
@@ -113,9 +149,7 @@ const NewArrivalsSlider = () => {
             </Container>
 
             {/* Right Arrow Button aligned to Container's Right */}
-            <Container
-                sx={{ position: 'relative' }}
-            >
+            <Container sx={{ position: 'relative' }}>
                 <IconButton
                     className="slider-arrow"
                     onClick={handleRightClick}
@@ -123,7 +157,6 @@ const NewArrivalsSlider = () => {
                         position: 'absolute',
                         top: '50%',
                         right: '4%',
-                        // right: { xs: '10px', md: 'calc((100% - 1140px) / 2 - 25px)' }, 
                         transform: 'translate(50%, -50%)',
                         backgroundColor: '#fff',
                         border: '1px solid #ccc',

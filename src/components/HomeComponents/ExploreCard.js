@@ -1,6 +1,10 @@
 import React from 'react';
-import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/pagination';
+
+import { FaShoppingCart } from 'react-icons/fa';
 
 import img1 from '../assets/new-img/AYVA IMAGES (53).webp';
 import img2 from '../assets/new-img/AYVA IMAGES (52).webp';
@@ -18,82 +22,95 @@ const products = [
   { title: "Women’s Wallet", img: img6 },
 ];
 
-// Parent variants for staggering
-const containerVariants = {
-  hidden: {},
-  show: {
-    transition: {
-      staggerChildren: 0.2, // Delay between cards
-    },
-  },
-};
-
-// Child variants for each card
-const cardVariants = {
-  hidden: { opacity: 0, y: 50 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
-};
-
 const ExploreCard = () => {
-  const { ref, inView } = useInView({
-    triggerOnce: false,    // Animate every time
-    threshold: 0.2,         // 20% visible
-  });
-
   return (
-    <div ref={ref} className="container py-5 product-home-card2">
+    <div className="container py-5 product-home-card2">
       <h5 className="text-center mb-4">Explore Ayvva Men’s Collection</h5>
-      <motion.div
-        className="row justify-content-center"
-        variants={containerVariants}
-        initial="hidden"
-        animate={inView ? "show" : "hidden"}
+
+      <Swiper
+        modules={[Autoplay, Pagination]}
+        spaceBetween={20}
+        slidesPerView={4}
+        autoplay={{ delay: 3000, disableOnInteraction: false }}
+        pagination={{ clickable: true }}
+        breakpoints={{
+          0: { slidesPerView: 1 },
+          576: { slidesPerView: 2 },
+          768: { slidesPerView: 3 },
+          992: { slidesPerView: 4 },
+        }}
       >
         {products.map((item, idx) => (
-          <motion.div
-            className="col-6 col-md-3 mb-4"
-            key={idx}
-            variants={cardVariants}
-          >
-            <div className="position-relative overflow-hidden" style={{ borderRadius: '0px', height: '100%' }}>
-              <div style={{ position: 'relative', height: '250px' }}>
+          <SwiperSlide key={idx}>
+            <div className="product-card">
+              <div className="image-wrapper">
                 <img
                   src={item.img}
                   alt={item.title}
-                  className="img-fluid w-100 h-100"
-                  style={{ objectFit: 'cover' }}
+                  className="img-fluid"
                 />
-                <div
-                  className="d-flex justify-content-center align-items-center overlay"
-                  style={{
-                    position: 'absolute',
-                    top: 0,
-                    left: 0,
-                    right: 0,
-                    bottom: 0,
-                    backgroundColor: 'rgba(51, 51, 51, 0.6)',
-                    color: 'white',
-                    fontWeight: 600,
-                    fontSize: '1.2rem',
-                    opacity: 0,
-                    transition: 'opacity 0.3s ease',
-                  }}
-                >
-                  <span>Shop Now</span>
+                <div className="overlay">
+                  <FaShoppingCart size={24} />
+                  <span className="shop-text">Shop Now</span>
                 </div>
               </div>
               <div className="text-center p-2">
-                <small className="fw-semibold text-black">{item.title}</small>
+                <small className="fw-semiboldd text-black">{item.title}</small>
               </div>
             </div>
-          </motion.div>
+          </SwiperSlide>
         ))}
-      </motion.div>
+      </Swiper>
 
-      {/* Hover effect */}
       <style jsx="true">{`
-        .position-relative:hover .overlay {
+
+      .swiper-wrapper 
+      {
+      margin-bottom:24px;
+      }
+        .product-card {
+          height: 100%;
+          border-radius: 0;
+          overflow: hidden;
+        }
+        .image-wrapper {
+          position: relative;
+          width: 100%;
+          aspect-ratio: 3 / 4; /* Ensures consistent height-to-width ratio */
+          overflow: hidden;
+        }
+        .image-wrapper img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+        .overlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-color: rgba(51, 51, 51, 0.6);
+          color: white;
+          font-weight: 600;
+          font-size: 1rem;
+          opacity: 0;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          transition: opacity 0.3s ease;
+          gap: 10px;
+        }
+        .product-card:hover .overlay {
           opacity: 1;
+        }
+        .shop-text {
+          font-size: 1rem;
+        }
+        .swiper-pagination-bullets {
+          margin-top: 30px;
+          text-align: center;
         }
       `}</style>
     </div>
