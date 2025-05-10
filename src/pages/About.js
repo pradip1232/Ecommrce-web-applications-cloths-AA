@@ -81,7 +81,7 @@ const About = () => {
               <motion.img
                 src={img3}
                 alt="Main"
-                className="img-fluid w-75 h-75 rounded shadow"
+                className="img-fluid w-75 h-75 roundedd shadow"
                 initial={{ scale: 0.9, opacity: 0 }}
                 whileInView={{ scale: 1, opacity: 1 }}
                 transition={{ duration: 1 }}
@@ -97,7 +97,7 @@ const About = () => {
                   width: '100px',
                   height: '120px',
                   top: '10%',
-                  left: '14%',
+                  left: '18%',
                   objectFit: 'cover',
                   border: '2px solid white',
                   backgroundColor: 'white',
@@ -117,7 +117,7 @@ const About = () => {
                   width: '100px',
                   height: '120px',
                   top: '55%',
-                  left: '18%',
+                  left: '15%',
                   objectFit: 'cover',
                   border: '2px solid white',
                   backgroundColor: 'white',

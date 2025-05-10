@@ -10,6 +10,19 @@ import { Phone, Email, LocationOn, Facebook, Instagram } from '@mui/icons-materi
 const ContactUs = () => {
     return (
         <Container className="contact-section">
+            <Row className='text-center justify-content-center mb-5 pb-3 text-contactpage'>
+                <Col md={8} className='text-center'>
+                    <h3>We’d Love to Hear From You</h3>
+                    <h5>At AYVVA, your experience matters. Whether you have a question about our collections, need styling assistance, or want to collaborate —
+                        <span>
+
+                            we’re just a message away.
+                        </span>
+                    </h5>
+                    <h6> Feel free to reach out and our team will get back to you within 24–48 hours.</h6>
+                </Col>
+            </Row>
+
             <Row className="gy-4">
                 {/* Left Section */}
                 <Col md={6}>

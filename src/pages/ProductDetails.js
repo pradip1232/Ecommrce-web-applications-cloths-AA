@@ -84,16 +84,22 @@ const ProductDetails = () => {
 
     return (
         <>
+            <div className='product-details-categoyr-line container-fluid'>
+                <span>
+                    Men’s /  Clothing  /  Tshirt
+                </span>
+            </div>
+
             <div className="container py-4 product-details-page">
                 <div className="row g-4 align-items-start">
-                    <div className="col-md-6 text-center">
-                        <img src={product.image} alt="Product" className="img-fluid w-100" />
+                    <div className="col-md-6 text-left product-detail-page-left-img-cont">
+                        <img src={product.image} alt="Product" className="img-fluidd " />
                     </div>
 
                     <div className="col-md-6">
-                        <h5 className="fw-semibold">{product.title}</h5>
+                        <h5 className="fw-semibodld">{product.title}</h5>
                         <p className="h5 mb-1">₹{product.price} <small className="text-muted">(incl. all taxes)</small></p>
-                        <p className="text-success small mb-3">Limited Offer: ₹{product.offerPrice} (30% OFF)</p>
+                        <p className="text-successssssss small mb-3">Limited Offer: ₹{product.offerPrice} (30% OFF)</p>
 
                         {/* Color Selection */}
                         <div className="mb-3">
@@ -108,6 +114,7 @@ const ProductDetails = () => {
                                             backgroundColor: color,
                                             width: '30px',
                                             height: '30px',
+                                            borderRadius:'50%',
                                             border: selectedColor === color ? '2px solid black' : '1px solid #ccc',
                                         }}
                                     ></button>
@@ -131,24 +138,36 @@ const ProductDetails = () => {
                             </div>
                         </div>
 
-                        {/* Quantity */}
-                        <div className="mb-3">
-                            <label htmlFor="qty" className="form-label"><strong>Qty</strong></label>
-                            <input
-                                type="number"
-                                id="qty"
-                                value={qty}
-                                onChange={(e) => setQty(e.target.value)}
-                                className="form-control w-25"
-                                min="1"
-                            />
+                        {/* Quantity and Add to Cart Row */}
+                        <div className="row mb-3">
+                            {/* Quantity Dropdown (25%) */}
+                            <div className="col-3">
+                                <label htmlFor="qty" className="form-label"><strong>Qty</strong></label>
+                                <select
+                                    id="qty"
+                                    value={qty}
+                                    onChange={(e) => setQty(e.target.value)}
+                                    className="form-select"
+                                >
+                                    {[1, 2, 3, 4, 5].map((val) => (
+                                        <option key={val} value={val}>{val}</option>
+                                    ))}
+                                </select>
+                            </div>
+
+                            {/* Add to Cart Button (75%) */}
+                            <div className="col-9 d-flex align-items-end">
+                                <button className="btn btn-dark w-100">ADD TO CART</button>
+                            </div>
                         </div>
 
-                        {/* Buttons */}
-                        <div className="d-flex gap-2 mb-4">
-                            <button className="btn btn-dark w-50">ADD TO CART</button>
-                            <button className="btn btn-outline-dark w-50" onClick={handleBuyNow}>BUY NOW</button>
+                        {/* Buy Now Button Row */}
+                        <div className="row mb-4">
+                            <div className="col-12">
+                                <button className="btn btn-outline-dark w-100" onClick={handleBuyNow}>BUY NOW</button>
+                            </div>
                         </div>
+
 
                         {/* Accordions */}
                         <Accordion activeKey={open} onSelect={(k) => setOpen(open === k ? '' : k)} flush>

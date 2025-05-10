@@ -66,7 +66,7 @@ const Home = () => (
           <div className="banner-content position-absolute">
             <h2 className="fw-boldd">YOUR PERFECT PLUS-<br />ONE FOR EVERY OUTFIT</h2>
             <p className="text-muted mt-3 mb-4">COMPACT, CHIC, AND EFFORTLESSLY YOU</p>
-            <a href="#" className="btn btn-dark">Shop the Collection</a>
+            <a href="#" className="btn btn-darkk">Shop the Collection</a>
           </div>
         </div>
       </div>

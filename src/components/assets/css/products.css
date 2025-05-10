@@ -14,21 +14,75 @@
   object-fit: cover; /* Ensures image fills space nicely */
 }
 
+.product-page-container .card .card-body:hover a {
+  color: white;
+}
+.product-page-container .card .card-body a {
+  color: black;
+}
+.product-page-container .card .card-body p {
+  font-family: Poppins;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 117%;
+  letter-spacing: 0%;
+  margin: 0;
+  text-align: center;
+  padding: 10px 0;
+}
 .product-page-container .card .card-body {
-  height: 35%;
-  /* padding: 0.75rem; */
+  /* background-color: red; */
+  /* height: 35%; */
+  padding: 0.75rem;
   display: flex;
+  flex: none;
   flex-direction: column;
   /* justify-content: space-between; */
 }
-.product-page-container .card .card-body {
-  
+
+.product-details-categoyr-line {
+  padding: 0 5rem;
+  margin-top: 1rem;
+}
+.product-details-categoyr-line span {
+  font-family: Poppins;
+  font-weight: 300;
+  font-size: 10px;
+  line-height: 146%;
+  letter-spacing: 0%;
+}
+
+.product-page-container .card .card-body:hover {
+  background-color: rgba(41, 41, 41, 1);
+  color: white;
+}
+.product-page-container .card .card-body:hover .card-title {
+  color: white;
 }
 .product-page-container .card .card-body .card-title {
   cursor: pointer;
+  font-family: Playfair Display;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  color: black;
 }
 
 /* product details  */
+.product-details-page .product-detail-page-left-img-cont {
+  width: 546.24169921875px;
+  height: 688px;
+}
+.product-details-page .product-detail-page-left-img-cont img {
+  max-width: 80%;
+  width: 80%;
+}
+
+.product-details-page button {
+  border-radius: 0px;
+}
 .product-details-page h5 {
   font-family: Playfair Display;
   font-weight: 400;
@@ -38,6 +92,32 @@
   text-transform: uppercase;
 }
 
+.product-details-page .h5 {
+  font-family: Poppins;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 117%;
+  letter-spacing: 0%;
+  margin-top: 18px;
+}
+
+.product-details-page small {
+  font-family: Poppins;
+  font-weight: 300;
+  font-size: 10px;
+  line-height: 138%;
+  letter-spacing: 0%;
+}
+
+.product-details-page p {
+  font-family: Poppins;
+  font-weight: 275;
+  font-size: 12px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  /* text-align: center; */
+  color: black;
+}
 /* YouMayAlsoLike.css */
 .product-detail-page-yourmay .card-img-top {
   height: 300px;

@@ -6,7 +6,9 @@
   flex: 1 1 25%;
   height: 300px;
 }
-
+.about-sectiosn-first-sectiosn {
+  margin-top: 1.5rem;
+}
 .about-sectiosn-first-sectiosn h5 {
   font-family: Playfair Display;
   font-weight: 400;

@@ -2,14 +2,13 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import IconButton from '@mui/material/IconButton';
 
 import i1 from '../assets/new-img/AYVA IMAGES (33).webp';
 import i2 from '../assets/new-img/AYVA IMAGES (34).webp';
 import i3 from '../assets/new-img/AYVA IMAGES (35).webp';
 import i4 from '../assets/new-img/AYVA IMAGES (36).webp';
-
-
-
 
 const bags = [
   { id: 1, name: 'Sling Bag', price: '₹999', image: i1 },
@@ -54,7 +53,22 @@ const SlingBagsSection = () => {
             key={bag.id}
             variants={cardVariants}
           >
-            <div className="card border-0">
+            <div className="card border-0 position-relative">
+              {/* Heart Icon at Top Right */}
+              <IconButton
+                sx={{
+                  position: 'absolute',
+                  top: 8,
+                  right: 8,
+                  backgroundColor: 'white',
+                  borderRadius: '50%',
+                  padding: '4px',
+                  zIndex: 1,
+                }}
+              >
+                <FavoriteBorderIcon sx={{ fontSize: 20 }} className='heart-icon-home' />
+              </IconButton>
+
               <img
                 src={bag.image}
                 alt={bag.name}
@@ -63,7 +77,7 @@ const SlingBagsSection = () => {
               />
               <div className="text-left mt-2">
                 <p className="mb-1">{bag.name}</p>
-                <strong>{bag.price}</strong>
+                <span>{bag.price}</span>
               </div>
             </div>
           </motion.div>

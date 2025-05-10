@@ -45,9 +45,9 @@ const ProductCard = ({ image, title, description, price, productID, addToCart })
           <Link to={`/product-details`} className="text-decoration-none text-dark">
             <h6 className="card-title mb-1">{title}</h6>
           </Link>
-          <p className="card-text small text-muted mb-2">{description}</p>
+          {/* <p className="card-text small text-muted mb-2">{description}</p> */}
           <div>
-            <p className="fw-bold mb-2">₹{price}</p>
+            <p className="fw-boldd ">₹{price}</p>
 
             <Link onClick={() =>
               addToCart({ productID, title, price, image: image[0] })

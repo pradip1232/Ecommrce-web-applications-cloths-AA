@@ -34,7 +34,10 @@ const ImageCard = ({ img }) => (
   <motion.div className="image-card position-relative overflow-hidden w-100 h-100" variants={itemVariants}>
     <img src={img.src} alt={img.name} className="w-100 h-100 object-fit-cover" />
     <div className="overlay d-flex flex-column justify-content-center align-items-center text-white text-center">
-      <h6 className="mb-1">{img.label}</h6>
+      <div className="text-warning">
+        ★★★★★
+      </div>
+      <h6 className="mb-0">{img.label}</h6>
       <p className="mb-0">{img.name}</p>
     </div>
   </motion.div>

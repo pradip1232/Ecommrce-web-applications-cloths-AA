@@ -1,5 +1,5 @@
 a {
-  color: #000 !important;
+  /* color: #000 !important; */
   /* background-color: #000; */
 }
 
@@ -24,6 +24,9 @@ a {
 
 #main-navbar .navbar-nav {
   margin-left: 19.5rem;
+}
+#main-navbar a{
+  color: #000;
 }
 
 @media (max-width: 1024px) {

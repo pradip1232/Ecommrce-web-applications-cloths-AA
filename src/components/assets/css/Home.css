@@ -88,6 +88,11 @@
   line-height: 100%;
   letter-spacing: 0%;
 }
+
+.product-home-card2 .hover-button:hover {
+  /* background-color: rgba(41, 41, 41, 1); */
+  background: rgba(41, 41, 41, 1);
+}
 .product-home-card2 .product-card .overlay {
   position: absolute;
   top: 0;
@@ -215,8 +220,20 @@
   top: 21%;
   left: 10%;
   position: absolute;
-  color: #000;
+  /* color: #000; */
   max-width: 410px;
+}
+.girls-banner-section .btn {
+  background: rgba(41, 41, 41, 1);
+  /* border: 0.5px solid rgba(0, 0, 0, 1); */
+  color: white;
+  border-radius: 0px !important;
+  font-family: Poppins;
+  font-weight: 400;
+  font-size: 14px;
+  /* line-height: 100%; */
+  /* letter-spacing: 0%; */
+  padding: 6px 29px;
 }
 
 @media (max-width: 768px) {
@@ -238,7 +255,31 @@
   letter-spacing: 0%;
   text-transform: uppercase;
 }
+.slignbagssection p {
+  font-family: Poppins;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-transform: capitalize;
+}
 
+.slignbagssection span {
+  font-family: Poppins;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #000;
+}
+
+.slignbagssection button {
+  background-color: none !important;
+  background: none !important;
+}
+.slignbagssection .heart-icon-home {
+  background: none !important;
+}
 .image-card {
   height: 350px;
   transition: transform 0.3s ease;
