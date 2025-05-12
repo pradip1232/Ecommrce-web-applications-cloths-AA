@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Navbar, Nav, Container } from 'react-bootstrap';
 import { motion } from 'framer-motion';
 import { FaSearch, FaRegHeart, FaUser, FaShoppingCart } from 'react-icons/fa';
@@ -6,7 +6,40 @@ import { Link } from 'react-router-dom';
 import logo from './assets/img/Ayva_Logo_CDR[1] black 1.png';
 import '../components/assets/css/Header.css';
 
-const Header = ({ cartCount }) => {
+const Header = () => {
+
+    const [cartCount, setCartCount] = useState(0);
+
+    const updateCartCount = () => {
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const total = cart.reduce((sum, item) => sum + item.quantity, 0);
+        setCartCount(total);
+    };
+
+    useEffect(() => {
+        updateCartCount();
+        window.addEventListener('storage', updateCartCount);
+        return () => window.removeEventListener('storage', updateCartCount);
+    }, []);
+
+
+
+
+    const [count, setCount] = useState(0);
+
+    useEffect(() => {
+        const updateCount = () => {
+            const wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+            setCount(wishlist.length);
+        };
+
+        updateCount(); // Initial count
+        window.addEventListener("wishlistUpdated", updateCount);
+
+        return () => {
+            window.removeEventListener("wishlistUpdated", updateCount);
+        };
+    }, []);
     return (
         <>
             <motion.div
@@ -48,11 +81,21 @@ const Header = ({ cartCount }) => {
 
                         <div className="d-flex gap-3 align-items-center ms-auto mt-3 mt-lg-0">
                             <FaSearch className="icon-hover" />
-                            <Link to="/wishlist">
-                                {/* <FaRegHeart className="icon-hover" style={{ fontSize: '20px' }} /> */}
-                                <i class="bi bi-heart" style={{ fontSize: '20px' }} ></i>
-                            </Link>
+                            <Link to="/wishlist" className="position-relative d-inline-block">
+                                <i
+                                    className={`bi ${count > 0 ? 'bi-heart-fill text-danger' : 'bi-heart'}`}
+                                    style={{ fontSize: '22px' }}
+                                ></i>
 
+                                {count > 0 && (
+                                    <span
+                                        className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                                        style={{ fontSize: '10px', minWidth: '16px', padding: '2px 6px' }}
+                                    >
+                                        {count}
+                                    </span>
+                                )}
+                            </Link>
                             <Link to="/my-cart" className="position-relative">
                                 <i className="bi bi-cart" style={{ fontSize: '20px' }}></i>
                                 {cartCount > 0 && (

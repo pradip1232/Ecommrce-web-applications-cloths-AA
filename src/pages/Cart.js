@@ -1,26 +1,18 @@
-import React from "react";
-
-const cartItems = [
-  {
-    id: 1,
-    image: "https://via.placeholder.com/60",
-    title: "Oversized Tee",
-    price: 1200,
-    quantity: 1,
-  },
-  {
-    id: 2,
-    image: "https://via.placeholder.com/60",
-    title: "Oversized Tee",
-    price: 1200,
-    quantity: 1,
-  },
-];
+import React, { useEffect, useState } from "react";
 
 const Cart = () => {
+  const [cartItems, setCartItems] = useState([]);
+
+  // Fetch cart from localStorage on component mount
+  useEffect(() => {
+    const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
+    setCartItems(storedCart);
+  }, []);
+
+  // Calculate totals
   const subtotal = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
   const discount = subtotal * 0.1;
-  const total = subtotal;
+  const total = subtotal - discount;
 
   return (
     <div className="container my-5">
@@ -41,26 +33,32 @@ const Cart = () => {
                 </tr>
               </thead>
               <tbody>
-                {cartItems.map((item) => (
-                  <tr key={item.id}>
-                    <td className="text-muted fs-5">&times;</td>
-                    <td>
-                      <div className="d-flex align-items-center">
-                        <img src={item.image} alt={item.title} className="me-2 cart-img" />
-                        <span>{item.title}</span>
-                      </div>
-                    </td>
-                    <td>₹{item.price}</td>
-                    <td>
-                      <div className="quantity-control">
-                        <button className="btn btn-outline-secondary btn-sm">-</button>
-                        <span className="mx-2">{item.quantity.toString().padStart(2, "0")}</span>
-                        <button className="btn btn-outline-secondary btn-sm">+</button>
-                      </div>
-                    </td>
-                    <td>₹{item.price * item.quantity}</td>
+                {cartItems.length > 0 ? (
+                  cartItems.map((item, index) => (
+                    <tr key={index}>
+                      <td className="text-muted fs-5">&times;</td>
+                      <td>
+                        <div className="d-flex align-items-center">
+                          <img src={item.image} alt={item.title} className="me-2 cart-img" width="60" />
+                          <span>{item.title}</span>
+                        </div>
+                      </td>
+                      <td>₹{item.price}</td>
+                      <td>
+                        <div className="quantity-control">
+                          <button className="btn btn-outline-secondary btn-sm">-</button>
+                          <span className="mx-2">{item.quantity.toString().padStart(2, "0")}</span>
+                          <button className="btn btn-outline-secondary btn-sm">+</button>
+                        </div>
+                      </td>
+                      <td>₹{item.price * item.quantity}</td>
+                    </tr>
+                  ))
+                ) : (
+                  <tr>
+                    <td colSpan="5" className="text-center">Your cart is empty.</td>
                   </tr>
-                ))}
+                )}
               </tbody>
             </table>
           </div>

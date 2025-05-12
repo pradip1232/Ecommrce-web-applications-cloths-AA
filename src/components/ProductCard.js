@@ -1,17 +1,60 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import { Link } from 'react-router-dom';
-import { FaShoppingCart } from 'react-icons/fa';
+import { FaShoppingCart, FaHeart } from 'react-icons/fa';
 
-const ProductCard = ({ image, title, description, price, productID, addToCart }) => {
+const ProductCard = ({ image, title, description, price, productID, handleAddToCart }) => {
   const carouselId = `carousel-${title.replace(/\s+/g, '-')}`;
   const images = image;
+  const [isWishlisted, setIsWishlisted] = useState(false);
+
+  // Check if item is already in wishlist on mount
+  useEffect(() => {
+    const wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+    const exists = wishlist.some(item => item.id === productID);
+    setIsWishlisted(exists);
+  }, [productID]);
+
+  const handleWishlistToggle = () => {
+    const wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+    const exists = wishlist.some(item => item.id === productID);
+
+    let updatedWishlist;
+    if (exists) {
+      updatedWishlist = wishlist.filter(item => item.id !== productID);
+      setIsWishlisted(false);
+    } else {
+      updatedWishlist = [
+        ...wishlist,
+        { id: productID, title, price, image: image[0] }
+      ];
+      setIsWishlisted(true);
+    }
+
+    localStorage.setItem("wishlist", JSON.stringify(updatedWishlist));
+    // Optional: Trigger a global update (e.g., update count in header)
+    window.dispatchEvent(new Event("wishlistUpdated"));
+  };
 
   return (
     <div className="col-lg-3 col-md-4 col-sm-6 product-page-container">
-      <div className="card  border-0">
-        {/* Carousel with autoplay (uncomment interval for auto-slide) */}
+      <div className="card border-0 position-relative">
+        {/* Heart Icon */}
+        <div 
+          onClick={handleWishlistToggle}
+          style={{
+            position: 'absolute',
+            top: '8px',
+            right: '10px',
+            zIndex: 10,
+            cursor: 'pointer',
+            color: isWishlisted ? 'red' : '#ccc',
+          }}
+        >
+          <FaHeart size={20} />
+        </div>
+
         <div
           id={carouselId}
           className="carousel slide carousel-fade carouselId"
@@ -41,27 +84,17 @@ const ProductCard = ({ image, title, description, price, productID, addToCart })
         </div>
 
         <div className="card-body text-center">
-          {/* <Link to={`/product/${id}`} className="text-decoration-none text-dark"> */}
           <Link to={`/product-details`} className="text-decoration-none text-dark">
             <h6 className="card-title mb-1">{title}</h6>
           </Link>
-          {/* <p className="card-text small text-muted mb-2">{description}</p> */}
           <div>
             <p className="fw-boldd ">₹{price}</p>
 
             <Link onClick={() =>
-              addToCart({ productID, title, price, image: image[0] })
+              handleAddToCart({ productID, title, price, image: image[0] })
             }>
               <FaShoppingCart size={22} />
             </Link>
-            {/* <button
-              className="btn btn-dark btn-sm w-100"
-              onClick={() =>
-                addToCart({ productID, title, price, image: image[0] })
-              }
-            >
-              Add to Cart
-            </button> */}
           </div>
         </div>
       </div>
